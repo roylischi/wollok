@@ -43,7 +43,7 @@ class Persona {
   method comioAlgo() = comidasConsumidas.size() > 0
 }
 
-object osky inherits Persona (criterioElemento = sordo, criterioComida = vegetariano, posicion = 'a') {
+object osky inherits Persona (criterioElemento = sordo, criterioComida = alternado, posicion = 'a') {
   override method condicionParaPasarlaBien() = true
   
 }
@@ -171,11 +171,15 @@ object alternado {
   }
 }
 
-object combinacion {
-  const listaDeCriterios = [vegetariano, dietetico]
+class Combinacion {
+  const property listaDeCriterios = []
+
+  method agregarCriterio(criterio) = listaDeCriterios.add(criterio)
 
   method agarrarComida(comida) = listaDeCriterios.all{criterio => criterio.agarrarComida(comida)}
 }
+
+const combinacion = new Combinacion()
 
 /*
 por que herencia? porque podes reutilizar codigo sin repetir 

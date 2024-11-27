@@ -165,7 +165,7 @@ object inmundosasFijas {
 }
 
 object inmunidosasVariables {
-  method elegir(vacuna, meses) = vacuna.obtenerInmunidad(persona) >=persona.inmunidad().plusMonths(meses)
+  method elegir(vacuna, meses) = vacuna.obtenerInmunidad(persona) >= persona.inmunidad().plusMonths(meses)
 } 
 
 class Plan {
